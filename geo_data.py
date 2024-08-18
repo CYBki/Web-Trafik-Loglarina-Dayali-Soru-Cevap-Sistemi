@@ -4,7 +4,7 @@ import geoip2.database
 import re
 
 # GeoIP veritabanının yolunu belirtin
-geoip_db_path = "C:\\Users\\syorg\\AppData\\Local\\Temp\\AweZip\\Temp1\\AweZip0\\GeoLite2-City_20240813\\GeoLite2-City_20240813\\GeoLite2-City.mmdb"
+geoip_db_path = "geoip_db_path"
 
 # GeoIP Reader'ı oluşturun
 try:
@@ -16,7 +16,7 @@ except FileNotFoundError:
     reader = None
 
 # Log dosyasının yolunu belirtin
-log_file_path = 'C:\\Apache24\\logs\\access.log'  
+log_file_path = 'log_path'  
 
 # Log dosyasını okuyup IP adreslerini çıkartın
 ip_addresses = []
@@ -48,14 +48,14 @@ df.to_csv('C:\\Users\\syorg\\output.csv', index=False)
 import pandas as pd
 
 # CSV dosyasını yükleyin
-csv_file_path = 'C:\\Users\\syorg\\output.csv'  
+csv_file_path = 'csv_file_path'  
 df = pd.read_csv(csv_file_path)
 
 # "Unknown" içeren satırları filtreleyin
 df_filtered = df[df['country'] != 'Unknown']
 
 # Filtrelenmiş veriyi yeni bir CSV dosyasına kaydedin
-filtered_csv_file_path = 'C:\\Users\\syorg\\output_filtered.csv'
+filtered_csv_file_path = 'filtered_csv_file_path'
 df_filtered.to_csv(filtered_csv_file_path, index=False)
 
 print(f"Filtered CSV file saved to: {filtered_csv_file_path}")
