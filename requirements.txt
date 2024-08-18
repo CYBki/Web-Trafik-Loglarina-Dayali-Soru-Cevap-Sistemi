@@ -4,12 +4,21 @@ faiss-cpu==1.7.3
 # OpenAI API için kütüphane
 openai==0.27.0
 
-# Python için veri işleme kütüphaneleri
+# Veri işleme ve analiz için kütüphaneler
+numpy==1.24.3
 pandas==2.0.2
 
-# Testler için kütüphane
-unittest2==1.1.0
+# Metin verilerini vektörlere dönüştürme için kütüphane
+scikit-learn==1.3.1
 
-# Diğer gerekli kütüphaneler
-numpy==1.24.3
-scipy==1.11.2
+# Model ve sonuçları saklamak için kütüphane
+joblib==1.2.0
+
+# Coğrafi IP verileri için kütüphane
+geoip2==4.7.0
+
+# Kullanıcı ajanlarını işlemek için kütüphane
+user-agents==2.2.0
+
+# Birim testler için kütüphane
+unittest2==1.1.0
