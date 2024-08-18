@@ -5,11 +5,18 @@ Bu proje, bir web sitesinin trafik loglarını kullanarak doğal dildeki sorular
 ## İçindekiler
 - [Proje Hakkında](#proje-hakkında)
 - [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
-- [Kurulum](#Kurulum)
+- [Kurulum](#kurulum)
+  - [Gereksinimler](#gereksinimler)
+  - [Depoyu Klonlama](#depoyu-klonlama)
+  - [Sanal Ortam Oluşturma ve Bağımlılıkları Yükleme](#sanal-ortam-oluşturma-ve-bağımlılıkları-yükleme)
 - [Kullanım](#kullanım)
-- [Testler](#Sistem-Entegrasyonu-ve-Test)
-- [Performans Değerlendirmesi](#Performans-Değerlendirmesi)
+  - [Log Verilerini Hazırlama](#log-verilerini-hazırlama)
+  - [Modeli Eğitme ve Test Etme](#modeli-eğitme-ve-test-etme)
+- [Sistem Entegrasyonu ve Test](#sistem-entegrasyonu-ve-test)
+- [Performans Değerlendirmesi](#performans-değerlendirmesi)
 - [Sonuç ve Öneriler](#sonuç-ve-öneriler)
+- [Katkıda Bulunanlar](#katkıda-bulunanlar)
+- [Lisans](#lisans)
 
 ## Proje Hakkında
 Bu proje, web trafik logları kullanılarak bir soru-cevap sistemi geliştirmeyi hedefler. Sistem, kullanıcı sorularını alır, ilgili log verilerini bulur ve bu verilere dayanarak bir yanıt oluşturur. Projenin temel amacı, büyük log dosyaları üzerinde etkili bir şekilde çalışabilen ve anlamlı yanıtlar üretebilen bir sistem geliştirmektir.
@@ -32,15 +39,21 @@ Bu proje, web trafik logları kullanılarak bir soru-cevap sistemi geliştirmeyi
    - Yanıt kalitesini artırmak için önerilerde bulunulması.
 
 ## Kullanılan Teknolojiler
-- **Python**: Projenin geliştirilmesi için kullanılan ana programlama dili. Python 3.8 sürümü kullanılması tavsiye edilir FAISS python ile 3.8 sürümüne kadar uyumlu çalışabilmektedir.
+- **Python**: Projenin geliştirilmesi için kullanılan ana programlama dili. Python 3.8 sürümü kullanılması tavsiye edilir. FAISS python ile 3.8 sürümüne kadar uyumlu çalışabilmektedir.
 - **FAISS**: Log verilerini vektörlere dönüştürmek ve bu vektörler üzerinde hızlı arama yapmak için kullanılan kütüphane.
 - **OpenAI GPT**: Kullanıcı sorularına yanıt oluşturmak için kullanılan jeneratif dil modeli.
 - **Unittest**: Projedeki bileşenlerin test edilmesi için kullanılan Python test kütüphanesi.
 
 ## Kurulum
+
+### Gereksinimler
+- Python 3.8
+- Git
+- Sanal ortam (virtualenv veya conda)
+
+### Depoyu Klonlama
 Projeyi çalıştırmak için aşağıdaki adımları izleyin:
 
-### 1. Depoyu Klonlayın
 ```bash
 git clone https://github.com/username/project-repo.git
 cd project-repo
