@@ -34,7 +34,8 @@ Bu rapor, geliştirdiğimiz log analizi sisteminin doğruluğunu ve performansı
   | 113.110.156.210 | 2023-08-15 12:41:37+03:00 | PUT    | /about   | 204    | 6719       | https://www.bing.com   | Mozilla/5.0 (Windows NT 10.0; Win64; x64) Appl... | China         |
   | 172.228.94.122  | 2023-08-15 15:23:15+03:00 | POST   | /css/main.css | 304 | 4241       | https://www.google.com | Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:9...) | United States |
 
-- **Filtrelenmiş Loglara Dayalı Yanıt:** IP adresi 215.135.113.15 toplamda **4 kere** istek göndermiştir.
+- **Filtrelenmiş Loglara Dayalı Yanıt:**
+Verilen loglara göre, IP adresi **215.135.113.15** toplamda **4 kez** istek göndermiştir. Tüm istekler **PUT** metodu ile **/about** URL'sine yapılmış ve tüm isteklere **400** durum kodu ile yanıt verilmiştir.
 - **FAISS'e Dayalı Yanıt:** Aynı sonuçlar, IP adresinin dört kez kayıtlı olduğu gözlemlenmiştir.
 
 #### 2.1.2 Sorgu: "Bu kullanıcı hangi sayfalara erişti?"
@@ -110,15 +111,17 @@ Log dosyalarını manuel olarak oluşturdum ve daha fazla çeşitlilik sağlamak
 
 ### Vektör Veritabanı Yönetimi
 
-Vektörlere dönüştürme işlemi için FAISS kullanmayı tercih ettim. FAISS'in yerel olarak çalıştırılabilir olması ve kurulumunun daha kolay olması nedeniyle bu aracı seçtim. FAISS'i import ederken çeşitli sorunlarla karşılaştım, ancak Python 3.8 ile uyumluluğunu kontrol ederek bu sorunları çözdüm.
+Vektörlere dönüştürme işlemi için FAISS kullanmayı tercih ettim. FAISS'in yerel olarak çalıştırılabilir olması ve kurulumunun daha kolay olması nedeniyle bu aracı seçtim. FAISS'i import ederken çeşitli sorunlarla karşılaştım ve gpt/Stack Overflow gibi sitelerde çözümü bulamayınca FAISS in dokümanına gidip incelemeye başlayınca  python'ın 3.8 versiyonuna kadar desteklediğini farkettim ve bu sorunları çözdüm.
 
 ### RAG (Retrieval-Augmented Generation) Kurulum Sorunları
 
-Kullanıcının belirttiği IP adresi için sonuç bulunamadı hataları aldım. Daha fazla log kaydı gerektiğini belirten mesajlar aldım. Önceki aşamalarda temizlenmiş verilerin doğru bir şekilde işlenmediğini fark ettim ve verileri doğru şekilde kaydedip işleyerek sorunu çözdüm.
+Kullanıcının belirttiği IP adresi için sonuç bulunamadı hataları aldım. Daha fazla log kaydı gerektiğini belirten mesajlar aldım. Önceki aşamalarda temizlenmiş verilerin doğru bir şekilde işlenmediğini fark ettim bir kaç aşama öncesine gittim ve verileri doğru şekilde kaydedip işleyerek sorunu çözdüm.
 
 ## 6. Genel Öneriler
 
-- **Streaming Data Kullanımı:** Performansı artırmak için gerçek zamanlı veri akışlarını değerlendirebilirsiniz. Bu, sistemin yanıt süresini ve genel performansını iyileştirebilir.
+- **Streaming Data Kullanımı:** Performansı artırmak için gerçek zamanlı veri akışlarını değerlendirebilir. Bu, sistemin yanıt süresini ve genel performansını iyileştirebilir.
+- **Özellik çıkarımı:**
+- IP den ülke çıkarımı yaptığım gibi sonucu etkileyecek bir çok özellik vardır bunların araştırılması (gerekirse kendi kendimize deneyerek bulduğumuz sistemi etkileyen özellikler) ve özellik çıkarımı uygulamak sistemin performansını artıracaktır.
 
 ## 7. Sonuç
 
