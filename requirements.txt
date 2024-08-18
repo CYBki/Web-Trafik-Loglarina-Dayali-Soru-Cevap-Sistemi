@@ -1,0 +1,15 @@
+# FAISS kütüphanesi
+faiss-cpu==1.7.3
+
+# OpenAI API için kütüphane
+openai==0.27.0
+
+# Python için veri işleme kütüphaneleri
+pandas==2.0.2
+
+# Testler için kütüphane
+unittest2==1.1.0
+
+# Diğer gerekli kütüphaneler
+numpy==1.24.3
+scipy==1.11.2
