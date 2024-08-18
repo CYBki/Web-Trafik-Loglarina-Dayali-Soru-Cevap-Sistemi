@@ -23,7 +23,7 @@ joblib.dump(vectorizer, 'vectorizer.joblib')
 vectorizer = joblib.load('vectorizer.joblib')
 
 # OpenAI API Key
-openai.api_key = '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'
+openai.api_key = 'YOUR-API-KEY'
 
 # Sorgu vektörleştirme
 def vectorize_query(query):
