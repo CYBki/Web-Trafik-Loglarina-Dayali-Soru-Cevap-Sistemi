@@ -63,7 +63,7 @@ def generate_log_entry():
 
     return f'{ip} - - {timestamp} "{method} {path} {protocol}" {status} {size} "{referer}" "{user_agent}"'
 
-file_path = r"C:\Apache24\logs\acess.log"
+file_path = r"log_path"
 
 with open(file_path, "w") as f:
     for _ in range(1200):
