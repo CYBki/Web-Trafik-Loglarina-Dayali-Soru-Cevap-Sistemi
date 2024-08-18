@@ -1,5 +1,7 @@
 # FAISS kütüphanesi
 faiss-cpu==1.7.3
+## Python kütüphanesi##
+python == 3.8
 
 # OpenAI API için kütüphane
 openai==0.27.0
