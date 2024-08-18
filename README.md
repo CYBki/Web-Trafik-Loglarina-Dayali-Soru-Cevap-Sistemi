@@ -8,16 +8,6 @@ Bu proje, bir web sitesinin trafik loglarını kullanarak doğal dildeki sorular
 - [Kurulum](#kurulum)
   - [Gereksinimler](#gereksinimler)
   - [Depoyu Klonlama](#depoyu-klonlama)
-  - [Sanal Ortam Oluşturma ve Bağımlılıkları Yükleme](#sanal-ortam-oluşturma-ve-bağımlılıkları-yükleme)
-- [Kullanım](#kullanım)
-  - [Log Verilerini Hazırlama](#log-verilerini-hazırlama)
-  - [Modeli Eğitme ve Test Etme](#modeli-eğitme-ve-test-etme)
-- [Sistem Entegrasyonu ve Test](#sistem-entegrasyonu-ve-test)
-- [Performans Değerlendirmesi](#performans-değerlendirmesi)
-- [Sonuç ve Öneriler](#sonuç-ve-öneriler)
-- [Katkıda Bulunanlar](#katkıda-bulunanlar)
-- [Lisans](#lisans)
-
 ## Proje Hakkında
 Bu proje, web trafik logları kullanılarak bir soru-cevap sistemi geliştirmeyi hedefler. Sistem, kullanıcı sorularını alır, ilgili log verilerini bulur ve bu verilere dayanarak bir yanıt oluşturur. Projenin temel amacı, büyük log dosyaları üzerinde etkili bir şekilde çalışabilen ve anlamlı yanıtlar üretebilen bir sistem geliştirmektir.
 
