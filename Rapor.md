@@ -1,5 +1,20 @@
 # Performans Değerlendirmesi
 
+## İçindekiler
+
+1. [Giriş](#1-giriş)
+2. [Sistem Performansı](#2-sistem-performansı)
+   - [Test Senaryoları ve Sonuçlar](#21-test-senaryoları-ve-sonuçlar)
+     - [Sorgu: "Bu IP kaç kere istek göndermiştir?"](##211-sorgu-bu-ip-kaç-kere-istek-göndermiştir)
+     - [Sorgu: "Bu kullanıcı hangi sayfalara erişti?"](##212-sorgu-bu-kullanıcı-hangi-sayfalara-erişti)
+     - [Sorgu: "En sık kullanılan URL nedir?"](##213-sorgu-en-sık-kullanılan-url-nedir)
+   - [Performans Ölçümleri](#22-performans-ölçümleri)
+3. [Doğruluk Değerlendirmesi](#3-doğruluk-değerlendirmesi)
+4. [İyileştirme Önerileri](#4-iyileştirme-önerileri)
+5. [Sorun Çözümü Raporu](#5-sorun-çözümü-raporu)
+6. [Genel Öneriler](#6-genel-öneriler)
+7. [Sonuç](#7-sonuç)
+
 ## 1. Giriş
 
 Bu rapor, geliştirdiğimiz log analizi sisteminin doğruluğunu ve performansını değerlendirmek için hazırlanmıştır. Sistem, kullanıcılardan gelen sorgulara yanıt verirken log verilerini analiz etmek üzere FAISS vektör arama ve dil modeli teknolojilerini kullanmaktadır. Raporda, sistemin doğruluğu, performansı ve iyileştirme önerileri detaylandırılmıştır.
@@ -15,7 +30,7 @@ Bu rapor, geliştirdiğimiz log analizi sisteminin doğruluğunu ve performansı
 - **Bulunan Log Kayıtları:**
 
   | ip              | timestamp                | method | url      | status | bytes_size | referrer                | user_agent                                      | country       |
-  |-----------------|---------------------------|--------|----------|--------|------------|-------------------------|-------------------------------------------------|---------------|
+  |-----------------|--------------------------|--------|----------|--------|------------|-------------------------|-------------------------------------------------|---------------|
   | 215.135.113.15  | 2023-08-15 09:18:02+03:00 | PUT    | /about   | 400    | 4890       | https://www.google.com | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7...) | United States |
   | 215.135.113.15  | 2023-08-15 09:18:02+03:00 | PUT    | /about   | 400    | 4890       | https://www.google.com | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7...) | United States |
   | 190.111.107.243 | 2023-08-15 13:53:43+03:00 | POST   | /products| 404    | 7844       | https://www.google.com | Mozilla/5.0 (Windows NT 10.0; Win64; x64) Appl... | Brazil        |
@@ -50,11 +65,11 @@ Bu rapor, geliştirdiğimiz log analizi sisteminin doğruluğunu ve performansı
 
   | Sorgu                                   | Yanıt Süresi |
   |-----------------------------------------|--------------|
-  | Bu IP kaç kere istek göndermiştir?      | 1.82 saniye   |
-  | Bu IP kaç kere istek göndermiştir? (192.168.1.1) | 0.00 saniye   |
-  | Bu IP kaç kere istek göndermiştir? (10.0.0.5)   | 0.00 saniye   |
-  | Bu kullanıcı hangi sayfalara erişti?     | 2.00 saniye   |
-  | En sık kullanılan URL nedir?             | 1.39 saniye   |
+  | Bu IP kaç kere istek göndermiştir?      | 1.82 saniye  |
+  | Bu IP kaç kere istek göndermiştir? (192.168.1.1) | 0.00 saniye  |
+  | Bu IP kaç kere istek göndermiştir? (10.0.0.5)   | 0.00 saniye  |
+  | Bu kullanıcı hangi sayfalara erişti?     | 2.00 saniye  |
+  | En sık kullanılan URL nedir?             | 1.39 saniye  |
 
 ## 3. Doğruluk Değerlendirmesi
 
@@ -77,7 +92,37 @@ Bu rapor, geliştirdiğimiz log analizi sisteminin doğruluğunu ve performansı
 3. **Test Kapsamı:**
    - Testlerin kapsamı genişletilerek farklı senaryolar ve veri setleri ile sistemin daha geniş bir test edilmesi sağlanabilir. Özellikle çeşitli IP adresleri ve URL'ler için performans ve doğruluk testleri yapılmalıdır.
 
-## 5. Sonuç
+## 5. Sorun Çözümü Raporu
+
+### Sunucu Başlatma Sorunları
+
+**Hata Mesajları ve Çözümler**
+
+1. **Hata:** httpd.exe: Syntax error on line 75  
+   **Açıklama:** httpd.conf dosyasının 75. satırında bulunan mod_actions.so modülü yüklenemedi.  
+   **Çözüm:** httpd.conf dosyasının 75. satırını yorum satırına alarak bu hatayı geçici olarak çözdüm. Ancak diğer satırlarda aynı hata ile karşılaşmaya başladım.
+
+2. **Hata:** AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name  
+   **Açıklama:** Sunucu, tam nitelikli etki alanı adını belirleyemediği için bu hata mesajını verdi.  
+   **Çözüm:** httpd.conf dosyasındaki ServerName direktifini yorum satırından çıkardım ve uygun bir değer atayarak sunucuyu yeniden başlattım.  
+   Sonuç olarak, httpd.exe -k status komutunu kullanarak sunucunun çalıştığını doğruladım ve "It works!" mesajını aldım.
+
+### Log Verisi Yönetimi
+
+Log dosyalarını manuel olarak oluşturdum ve daha fazla çeşitlilik sağlamak amacıyla bir Python scripti kullanarak logları 1100 civarında artırdım. Verileri analiz ettim ve ayıkladım. GeoIP2 veritabanını kullanarak IP adreslerinden ülke bilgisi çıkarımı yaparak değerli içgörüler elde ettim.
+
+### Vektör Veritabanı Yönetimi
+
+Vektörlere dönüştürme işlemi için FAISS kullanmayı tercih ettim. FAISS'in yerel olarak çalıştırılabilir olması ve kurulumunun daha kolay olması nedeniyle bu aracı seçtim. FAISS'i import ederken çeşitli sorunlarla karşılaştım, ancak Python 3.8 ile uyumluluğunu kontrol ederek bu sorunları çözdüm.
+
+### RAG (Retrieval-Augmented Generation) Kurulum Sorunları
+
+Kullanıcının belirttiği IP adresi için sonuç bulunamadı hataları aldım. Daha fazla log kaydı gerektiğini belirten mesajlar aldım. Önceki aşamalarda temizlenmiş verilerin doğru bir şekilde işlenmediğini fark ettim ve verileri doğru şekilde kaydedip işleyerek sorunu çözdüm.
+
+## 6. Genel Öneriler
+
+- **Streaming Data Kullanımı:** Performansı artırmak için gerçek zamanlı veri akışlarını değerlendirebilirsiniz. Bu, sistemin yanıt süresini ve genel performansını iyileştirebilir.
+
+## 7. Sonuç
 
 Sistem, genel olarak başarılı sonuçlar vermekte ve sorgulara doğru yanıtlar sağlamaktadır. Ancak, yanıtların içeriği ve performans açısından bazı iyileştirmelere ihtiyaç vardır. Bu iyileştirmeler, sistemin doğruluğunu ve verimliliğini artırarak kullanıcı deneyimini iyileştirecektir.
-
