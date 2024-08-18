@@ -122,6 +122,18 @@ Kullanıcının belirttiği IP adresi için sonuç bulunamadı hataları aldım.
 - **Streaming Data Kullanımı:** Performansı artırmak için gerçek zamanlı veri akışlarını değerlendirebilir. Bu, sistemin yanıt süresini ve genel performansını iyileştirebilir.
 - **Özellik çıkarımı:**
 - IP den ülke çıkarımı yaptığım gibi sonucu etkileyecek bir çok özellik vardır bunların araştırılması (gerekirse kendi kendimize deneyerek bulduğumuz sistemi etkileyen özellikler) ve özellik çıkarımı uygulamak sistemin performansını artıracaktır.
+- Sistemin cevaplarının kalitesinde en büyük rol oynayan doğal dil modelleridir. Dil modeli ne kadar güçlü olursa, cevapların kalitesi de o kadar yüksek olur.
+- Bu da demek oluyor ki
+- Veri Miktarı ve Çeşitliliği: Dil modeli, geniş ve çeşitli veri kümeleriyle eğitildikçe, farklı konularda daha iyi yanıtlar üretebilir.
+
+Modelin Mimarisi: Modelin karmaşıklığı ve derinliği, ne kadar bilgiyi işleyebileceğini ve ne kadar doğru yanıtlar verebileceğini etkiler.
+
+Bağlamsal Anlayış: Modelin, kullanıcının sorgusunu ve bağlamını doğru bir şekilde anlaması, kaliteli cevaplar üretmek için kritiktir.
+
+Güncellenme Sıklığı: Modelin ne kadar güncel olduğu, özellikle hızlı değişen bilgileri doğru bir şekilde sunabilmesi açısından önemlidir.
+
+İnferans Hızı: Cevapların oluşturulma süresi, kullanıcı deneyimini etkileyen bir diğer faktördür.
+bu kriterler göz önüne alınarak seçilen llm ler daha iyi cevaplar almada büyük bir etken(claude/gpt/gemini).
 
 ## 7. Sonuç
 
