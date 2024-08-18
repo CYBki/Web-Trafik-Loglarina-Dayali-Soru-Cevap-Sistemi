@@ -5,9 +5,9 @@ Bu proje, bir web sitesinin trafik loglarını kullanarak doğal dildeki sorular
 ## İçindekiler
 - [Proje Hakkında](#proje-hakkında)
 - [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
-- [Kurulum](#kurulum)
+- [Kurulum](#Kurulum)
 - [Kullanım](#kullanım)
-- [Testler](#testler)
+- [Testler](#Sistem-Entegrasyonu-ve-Test)
 - [Performans Değerlendirmesi](#performans-değerlendirmesi)
 - [Sonuç ve Öneriler](#sonuç-ve-öneriler)
 
