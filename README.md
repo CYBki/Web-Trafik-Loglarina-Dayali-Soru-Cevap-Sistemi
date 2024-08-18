@@ -18,7 +18,7 @@ Bu proje, web trafik logları kullanılarak bir soru-cevap sistemi geliştirmeyi
 
 2. **RAG Modelinin Kurulumu**:
    - Bilgi Alma: Vektör veri tabanını kullanarak en uygun log kayıtlarının bulunması.
-   - Jeneratif Model: Bulunan log kayıtlarıyla yanıt oluşturmak için bir dil modeli kullanılması.
+   - Jeneratif Model: Bulunan log kayıtlarıyla yanıt oluşturmak için bir dil modeli kullanılması(gpt).
 
 3. **Sistem Entegrasyonu ve Test**:
    - Bilgi alma ve jeneratif modelin entegre edilmesi.
