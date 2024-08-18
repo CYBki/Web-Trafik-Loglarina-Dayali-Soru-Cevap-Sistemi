@@ -32,7 +32,7 @@ Bu proje, web trafik logları kullanılarak bir soru-cevap sistemi geliştirmeyi
    - Yanıt kalitesini artırmak için önerilerde bulunulması.
 
 ## Kullanılan Teknolojiler
-- **Python**: Projenin geliştirilmesi için kullanılan ana programlama dili.
+- **Python**: Projenin geliştirilmesi için kullanılan ana programlama dili. Python 3.8 sürümü kullanılması tavsiye edilir FAISS python ile 3.8 sürümüne kadar uyumlu çalışabilmektedir.
 - **FAISS**: Log verilerini vektörlere dönüştürmek ve bu vektörler üzerinde hızlı arama yapmak için kullanılan kütüphane.
 - **OpenAI GPT**: Kullanıcı sorularına yanıt oluşturmak için kullanılan jeneratif dil modeli.
 - **Unittest**: Projedeki bileşenlerin test edilmesi için kullanılan Python test kütüphanesi.
