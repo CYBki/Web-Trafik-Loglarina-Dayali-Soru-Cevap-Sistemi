@@ -7,10 +7,10 @@ import joblib
 
 
 # FAISS indeksini yükleyin
-faiss_index = faiss.read_index("C:\\Apache24\\conf\\log_vectors.index")
+faiss_index = faiss.read_index("faiss_index")
 
 # Verilerinizi yükleyin
-df_combined = pd.read_csv('C:\\Users\\syorg\\combined_output.csv')
+df_combined = pd.read_csv('combined_output_csv')
 
 # Vektörleştiriciyi tanımlama ve eğitme
 vectorizer = TfidfVectorizer(max_features=faiss_index.d)
