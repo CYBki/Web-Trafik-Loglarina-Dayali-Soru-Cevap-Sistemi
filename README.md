@@ -8,7 +8,7 @@ Bu proje, bir web sitesinin trafik loglarını kullanarak doğal dildeki sorular
 - [Kurulum](#Kurulum)
 - [Kullanım](#kullanım)
 - [Testler](#Sistem-Entegrasyonu-ve-Test)
-- [Performans Değerlendirmesi](#performans-değerlendirmesi)
+- [Performans Değerlendirmesi](#Performans-Değerlendirmesi)
 - [Sonuç ve Öneriler](#sonuç-ve-öneriler)
 
 ## Proje Hakkında
