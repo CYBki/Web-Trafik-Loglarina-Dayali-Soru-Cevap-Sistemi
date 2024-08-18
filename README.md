@@ -45,5 +45,5 @@ Bu proje, web trafik logları kullanılarak bir soru-cevap sistemi geliştirmeyi
 Projeyi çalıştırmak için aşağıdaki adımları izleyin:
 
 ```bash
-git clone https://github.com/CYBki/Web-Trafik-Loglar-na-Dayal-Soru-Cevap-Sistemi.git
+git clone https://github.com/CYBki/Web-Trafik-Loglarina-Dayali-Soru-Cevap-Sistemi.git
 cd project-repo
