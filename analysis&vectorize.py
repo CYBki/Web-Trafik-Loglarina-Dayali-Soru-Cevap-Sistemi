@@ -36,14 +36,14 @@ def process_log_file(file_path):
                 logs.append(parsed)
     return pd.DataFrame(logs)
 
-csv_file_path = 'C:\\Users\\syorg\\output.csv'  
+csv_file_path = 'csv_file_path'  
 df_geo = pd.read_csv(csv_file_path)
 # Log dosyasını okuma
-file_path = r"C:\Apache24\logs\access.log"
+file_path = r"log_path"
 df_log = process_log_file(file_path)
 
 df_combined = df_log.merge(df_geo, on='ip', how='left')
-combined_csv_file_path = 'C:\\Users\\syorg\\combined_output.csv'  
+combined_csv_file_path = 'combined_csv_file_path'  
 df_combined.to_csv(combined_csv_file_path, index=False)
 print(f"Birleşmiş veri '{combined_csv_file_path}' dosyasına kaydedildi.")
 
@@ -58,7 +58,7 @@ df_combined = df_combined[df_combined['referrer'] != 'http://example.com/blog/po
 
 
 
-combined_csv_file_path = 'C:\\Users\\syorg\\combined_output.csv'  
+combined_csv_file_path = 'combined_csv_file_path'  
 df_combined.to_csv(combined_csv_file_path, index=False)
 print(f"Birleşmiş ve güncellenmiş veri '{combined_csv_file_path}' dosyasına kaydedildi.")
 
