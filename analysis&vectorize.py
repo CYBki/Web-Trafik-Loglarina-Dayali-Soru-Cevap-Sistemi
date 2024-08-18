@@ -10,7 +10,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # Log dosyasını işleme
 def parse_log_line(line):
     # Bu regex örnek bir Apache Combined Log Format için tasarlanmıştır
-    # Gerçek log formatınıza göre ayarlamanız gerekebilir
     pattern = r'(\S+) (\S+) (\S+) \[(.*?)\] "(.*?)" (\d+) (\d+) "(.*?)" "(.*?)"'
     match = re.match(pattern, line)
     if match:
